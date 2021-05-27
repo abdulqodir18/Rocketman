@@ -1,0 +1,111 @@
+@import '../../assets/Scss/variables.scss';
+
+.sidebar {
+   width: 270px;
+   height: 100vh;
+   background-color: $main-color;
+   border-right: 1px solid #303030;
+}
+
+.navbar {
+   height: 100%;
+   padding-bottom: 40px;
+   display: flex;
+   flex-direction: column;
+}
+
+.logo {
+   margin-bottom: 36px;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   padding: 17px 30px;
+   border-bottom: 1px solid #303030;
+}
+
+.logo__link {
+   width: 120px;
+   height: 36px;
+   display: inline-block;
+   transition: 0.2s ease;
+   
+   &:active {
+      opacity: 0.8;
+   }
+}
+
+.navbar__list {
+   margin: 0;
+   padding: 0;
+   margin-bottom: auto;
+   list-style-type: none;
+}
+
+.navbar__item {
+   margin-bottom: 20px;
+}
+
+.navbar__link {
+   position: relative;
+   z-index: 1s;
+   padding: 15px 30px;
+   display: flex;
+   align-items: center;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 22px;
+   color: $main-text-color;
+   text-decoration: none;
+   transition: 0.2s ease;
+   
+   svg path {
+      fill: $main-text-color;
+   }
+   
+   span {
+      margin-left: 15px;
+   }
+   
+   &::before {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      width: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -4px;
+      height: 50px;
+      background-color: $main-text-color_active;
+      content: "";
+      transition: 0.2s ease;
+   }
+   
+   &:hover {
+      color: $main-text-color_active;
+      
+      svg path {
+         fill: $main-text-color_active;
+      }
+      
+      &::before {
+         left: 0;
+      }
+   }
+}
+
+.navbar__link-active {
+   color: $main-text-color_active;
+   
+   svg path {
+      fill: $main-text-color_active;
+   }
+   
+   &::before {
+      left: 0;
+   }
+}
+
+.settings-link {
+   margin-top: auto;
+}
