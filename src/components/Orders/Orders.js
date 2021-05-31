@@ -1,8 +1,11 @@
 import './Orders.scss'
+import Container from '../Container/Container'
 
 function Orders() {
    return(
-      <>Orders</>
+      <Container>
+         orders
+      </Container>
    )
 }
 
