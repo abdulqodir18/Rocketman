@@ -1,12 +1,20 @@
-import "./Products.scss";
+import "./Catigoriya.scss";
 import Table from "../Table/Table";
 import Container from "../Container/Container";
-import TRow from "./TRow";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import AddModal from "./AddModal";
+import { modalCtx } from "../../context/Cotigory";
+import EditModal from "./ModalEdit";
+import DelateModal from "./Delate";
 
-function Products() {
+function Catigoriya() {
+
+  const { addModal, setAddModal, editModal, setEditModal, delateModal, setDelateModal} = useContext(modalCtx)
+
   return (
     <>
+      
       <Container>
         <div className="table-top">
           <ul className="table-top__list">
@@ -25,7 +33,7 @@ function Products() {
               </NavLink>
             </li>
           </ul>
-          <button className="table-top__btn">Qo’shish</button>
+          <button className="table-top__btn" onClick={()=> setAddModal(true)} >Qo’shish</button>
         </div>
         <div className="table-wraper">
           <Table>
@@ -46,10 +54,10 @@ function Products() {
                   <button className="state state--disabled">delated</button>
                 </td>
                 <td colSpan="1">
-                  <button className="edit" aria-label="edit"></button>
+                  <button className="edit" aria-label="edit" onClick={()=> setEditModal(true)}></button>
                 </td>
                 <td colSpan="1">
-                  <button className="delate" aria-label="delate"></button>
+                  <button className="delate" aria-label="delate" onClick={()=> setDelateModal(true)}></button>
                 </td>
               </tr>
               <tr>
@@ -68,8 +76,19 @@ function Products() {
           </Table>
         </div>
       </Container>
+
+      {
+        addModal && <AddModal/>
+      }
+      {
+        editModal && <EditModal/>
+      }
+      {
+        delateModal && <DelateModal/>
+      }
+      
     </>
   );
 }
 
-export default Products;
+export default Catigoriya;

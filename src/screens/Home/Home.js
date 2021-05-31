@@ -4,7 +4,7 @@ import Private from '../../routes/Private'
 import Header from '../../components/Header/Header'
 import Orders from '../../components/Orders/Orders'
 import Clients from '../../components/Clients/Clients'
-import Products from '../../components/Products/Products'
+import Products from '../Products/Products'
 import Settings from '../../components/Settings/Settings'
 
 function Home() {
