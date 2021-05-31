@@ -1,3 +1,78 @@
+.table-wraper {
+  border-right: 1px solid #D2D2D2;
+  border-left: 1px solid #D2D2D2;
+  overflow: hidden;
+  padding-right: -1px;
+  padding-left: -1px;
+  border-radius: 10px;
+}
 .pg-column__btn {
-  
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: url("../../assets/img/Arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 6px 612px;
+  cursor: pointer;
+}
+.pg-column__btn--left {
+  transform: rotate(180deg);
+}
+.pg-column__btn--actv { 
+  background-color: #2E3444;
+  background-image: url("../../assets/img/ArrowWhite.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 6px 12px;
+}
+.state {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 60px;  
+  padding: 7px 11px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+}
+.state--disabled {
+  background-color: #FFD9D9;
+  color: #BE0707;
+}
+.state--enabled {
+  background-color: #D9FFDA;
+  color: #008C06;
+}
+.edit {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 50%;  
+  background-color: #008C06;
+  background-image: url('../../assets/img/edit.svg');
+  background-position: center center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.delate {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 50%;  
+  background-color: #BE0707;
+  background-image: url('../../assets/img/delete.svg');
+  background-position: center center;
+  background-size: 20px;
+  background-repeat: no-repeat;
 }
