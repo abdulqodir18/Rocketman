@@ -2,7 +2,9 @@ import './Clients.scss'
 
 function Clients() {
    return(
-      <>Clients...</>
+      <>
+         Clients...
+      </>
    )
 }
 
