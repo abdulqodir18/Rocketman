@@ -1,7 +1,6 @@
 import "./Products.scss";
 import Table from "../Table/Table";
 import Container from "../Container/Container";
-import TRow from "./TRow";
 import { NavLink } from "react-router-dom";
 
 function Products() {
