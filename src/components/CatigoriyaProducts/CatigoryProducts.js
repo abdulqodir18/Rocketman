@@ -2,15 +2,15 @@ import "./CatigoryProduct.scss";
 import Table from "../Table/Table";
 import Container from "../Container/Container";
 import { NavLink } from "react-router-dom";
-// import { useContext } from "react";
-// import { modalCtx } from "../../context/Cotigory";
-// import AddModal from "./Modals/AddModal";
-// import EditModal from "./Modals/ModalEdit";
-// import DelateModal from "./Modals/Delate";
+import { useContext } from "react";
+import { modalCtx } from "../../context/Cotigory";
+import AddModal from "./Modals/AddModal";
+import EditModal from "./Modals/ModalEdit";
+import DelateModal from "./Modals/Delate";
 
 function CatigoryItem() {
 
-  // const { addModal, setAddModal, editModal, setEditModal, delateModal, setDelateModal} = useContext(modalCtx)
+  const { addModal, setAddModal, editModal, setEditModal, delateModal, setDelateModal} = useContext(modalCtx)
 
   return (
     <>
@@ -48,7 +48,7 @@ function CatigoryItem() {
               </NavLink>
             </li>
           </ul>
-          <button className="table-top__btn" onClick={()=> (true)} >Qo’shish</button>
+          <button className="table-top__btn" onClick={()=> setAddModal(true)} >Qo’shish</button>
         </div>
         <div className="table-wraper">
           <Table>
@@ -73,10 +73,10 @@ function CatigoryItem() {
                   <span className="state state--disabled">delated</span>
                 </td>
                 <td colSpan="1">
-                  <button className="edit" aria-label="edit" onClick={()=> (true)}></button>
+                  <button className="edit" aria-label="edit" onClick={()=> setEditModal(true)}></button>
                 </td>
                 <td colSpan="1">
-                  <button className="delate" aria-label="delate" onClick={()=> (true)}></button>
+                  <button className="delate" aria-label="delate" onClick={()=> setDelateModal(true)}></button>
                 </td>
               </tr>
               <tr>
@@ -96,7 +96,7 @@ function CatigoryItem() {
         </div>
       </Container>
 
-      {/* {
+      {
         addModal && <AddModal/>
       }
       {
@@ -104,7 +104,7 @@ function CatigoryItem() {
       }
       {
         delateModal && <DelateModal/>
-      } */}
+      }
     </>
   );
 }
