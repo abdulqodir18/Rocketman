@@ -1,25 +1,25 @@
 import { useContext } from "react";
-import { modalCtx } from "../../context/Cotigory";
-import Close from "../Lib/Svgs/Close";
+import { modalCtx } from "../../../context/Cotigory"
+import Close from "../../Lib/Svgs/Close";
 import "./AddModal.scss"
 
-function AddModal() {
+function EditModal() {
 
-  const {setAddModal } = useContext(modalCtx)
+  const {setEditModal } = useContext(modalCtx)
 
   return (
     <>
-    <div className="add-modal" onClick={(e)=> {if(e.target.className === "add-modal") setAddModal(false) }}>
+    <div className="add-modal" onClick={(e)=> {if(e.target.className === "add-modal") setEditModal(false) }}>
       <div className="add-modal__wrapper">
-          <button className="add-modal__close" type="button" aria-label="close" onClick={()=> setAddModal(false)}>
+          <button className="add-modal__close" type="button" aria-label="close" onClick={()=> setEditModal(false)}>
             < Close/>
           </button>
-          <h2 className="add-modal__title">Qo’shish</h2>
+          <h2 className="add-modal__title">Tahrirlash</h2>
 
           <form className="add-modal__form">
             <label className="add-modal__label">
               Kategoriya nomi
-              <input className="add-modal__input" type="text" placeholder="masalan: texnika" />
+              <input className="add-modal__input" type="text" placeholder="Fast food|" />
             </label>
 
             <span className="add-modal__span">Holat</span>
@@ -44,4 +44,4 @@ function AddModal() {
   );
 }
 
-export default AddModal;
+export default EditModal;

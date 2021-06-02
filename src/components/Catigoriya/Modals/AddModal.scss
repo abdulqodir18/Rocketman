@@ -19,6 +19,12 @@
   background-color: #FFFFFF;
   padding: 25px 20px;
   cursor: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.add-modal__wrapper--big {
+  max-width: 540px;
 }
 .add-modal__close {
   border: none;
@@ -50,8 +56,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100% !important;
 }
 .add-modal__label {
+  display: flex;
+  flex-direction: column;
 }
 .add-modal__input {
   background-color: #FFFFFF;
@@ -76,9 +85,9 @@
   font-size: 14px;
   line-height: 17px;
   color: #000000;
-  margin-bottom: 10px;
 }
 .add-modal__radio-wrp {
+  margin-top: 10px;
   display: flex;
 }
 .add-modal__radio-lbl {
