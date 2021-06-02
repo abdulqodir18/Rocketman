@@ -3,6 +3,7 @@ import { useState } from "react"
 
 import Table from "./../Table/Table.js"
 import Container from "../Container/Container"
+import AddDriverModal from "./AddDriverModal";
 
 import './Orders.scss'
 
@@ -86,6 +87,8 @@ function Orders() {
                </tbody>
             </Table>
          </Container>
+
+         <AddDriverModal />
       </>
    )
 }
