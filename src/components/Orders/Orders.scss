@@ -10,6 +10,10 @@
     color: #1B1B1B;
 }
 
+.clients-status-select:focus {
+    outline: 0;
+}
+
 .order-driver-btn {
     padding: 7px;
     border: 1px solid #000000;
@@ -39,6 +43,10 @@
     cursor: pointer;
 }
 
+.order-state:focus {
+    outline: 0;
+}
+
 .order-initial {
     color: #937200;
     background-color: #FCF1C9;
@@ -64,3 +72,6 @@
     background-color: #D9FFDA;
 }
 
+.orders-prev-next-btn {
+    background-color: transparent;
+}
