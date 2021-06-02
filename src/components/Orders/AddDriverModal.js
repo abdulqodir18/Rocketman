@@ -1,18 +1,22 @@
-import "./AddDriver.scss"
+import { useState } from "react"
 
+import "./AddDriver.scss"
 import Close from "../Lib/Svgs/Close"
 
-function AddDriverModal() {
+function AddDriverModal({modal, setModal}) {
+
+
 
   return (
     <>
-        <div className="modal">
+        <div className="modal" style={{ display: modal ? 'flex' : 'none' }}>
             <div className="modal-wrapper">
                 <h2 className="modal-drivers-title">Tahrirlash</h2>
-                <button className="close-drivers-btn"><Close /></button>
+                <button onClick={() => setModal(false)} className="close-drivers-btn"><Close /></button>
                 
+                <form>
                 <div className="order-drivers-list">
-                    <input className="order-drivers-radio" type="radio" id="johndoe" name="order-driver" value="johndoe"/>
+                    <input className="order-drivers-radio" type="radio" id="johndoe" name="order-driver" value="johndoe" required/>
                     <label className="order-drivers-item" for="johndoe">
                         <p className="order-drivers-name">John Doe</p>
                         <p className="order-drivers-number">20 A 333 CC</p>
@@ -29,7 +33,8 @@ function AddDriverModal() {
                     </label>
                 </div>
             
-                <button className="order-drivers-select-btn">Tanlash</button>
+                <button onSubmit={() => setModal(false)} className="order-drivers-select-btn">Tanlash</button>
+                </form>
             </div>
         </div>
     </> 

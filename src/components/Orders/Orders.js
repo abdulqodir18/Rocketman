@@ -11,8 +11,11 @@ import LocationIcon from "./../Lib/Svgs/Location"
 import MoreDots from "./../Lib/Svgs/MoreDots"
 
 function Orders() {
+
+   const [modal, setModal] = useState(false)
+
    const [prevBtnActive, setPrevBtnActive] = useState(false)
-  const [nextBtnActive, setNextBtnActive] = useState(false)
+   const [nextBtnActive, setNextBtnActive] = useState(false)
 
    return(
       <>
@@ -53,7 +56,7 @@ function Orders() {
                      <td colSpan="1">1</td>
                      <td colSpan="1">44 000</td>
                      <td colSpan="1"><Link to="/:client-address"><LocationIcon /></Link></td>
-                     <td colSpan="1"><button className="order-driver-btn">not selected</button></td>
+                     <td colSpan="1"><button onClick={() => setModal(true)} className="order-driver-btn">not selected</button></td>
                      <td colSpan="1"> <button className="order-state order-initial">buyurtma</button></td>
                      <td colSpan="1"><Link to="/:client-order"><MoreDots /></Link></td>
                      </tr>
@@ -88,7 +91,7 @@ function Orders() {
             </Table>
          </Container>
 
-         <AddDriverModal />
+        {modal &&  <AddDriverModal modal={modal} setModal={setModal} />}
       </>
    )
 }
