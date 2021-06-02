@@ -8,7 +8,7 @@ import AddModal from "./Modals/AddModal";
 import EditModal from "./Modals/ModalEdit";
 import DelateModal from "./Modals/Delate";
 
-function CatigoryItem() {
+function CatigoryProduct() {
 
   const { addModal, setAddModal, editModal, setEditModal, delateModal, setDelateModal} = useContext(modalCtx)
 
@@ -40,9 +40,9 @@ function CatigoryItem() {
             </li>
             <li className="table-top__item">
               <NavLink
-                className="table-top__item"
+                className="table-top__link"
                 activeClassName="table-top__item-acv"
-                to="/"
+                to="/product"
               >
                  Evos
               </NavLink>
@@ -66,7 +66,7 @@ function CatigoryItem() {
               <tr>
                 <td colSpan="1">1</td>
                 <td colSpan="1">
-                  <NavLink className="table-wraper__navLink" to="products/item">Lavash</NavLink>
+                  <NavLink className="table-wraper__navLink" to="products/item/products">Lavash</NavLink>
                 </td>
                 <td colSpan="1">5</td>
                 <td colSpan="1">
@@ -109,4 +109,4 @@ function CatigoryItem() {
   );
 }
 
-export default CatigoryItem;
+export default CatigoryProduct;

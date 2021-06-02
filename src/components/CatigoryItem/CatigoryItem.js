@@ -59,7 +59,7 @@ function CatigoryItem() {
               <tr>
                 <td colSpan="1">1</td>
                 <td colSpan="1">
-                  <NavLink className="table-wraper__navLink" to="products/item">Evos</NavLink>
+                  <NavLink className="table-wraper__navLink" to="/products/product">Evos</NavLink>
                 </td>
                 <td colSpan="1">5</td>
                 <td>

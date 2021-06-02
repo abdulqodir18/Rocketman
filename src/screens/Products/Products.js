@@ -17,7 +17,7 @@ function Products() {
             <CatigoryItem />
           </MadalPrv>
         </Route>
-        <Route exact path="/products/product">
+          <Route exact path="/products/product">
           <MadalPrv>
             <CatigoriyaProduct />
           </MadalPrv>
