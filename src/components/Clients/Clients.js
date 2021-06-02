@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { useState } from "react"
 
 import Table from "./../Table/Table.js"
 import Container from "../Container/Container"
@@ -6,6 +7,10 @@ import Container from "../Container/Container"
 import './Clients.scss'
 
 function Clients() {
+
+  const [prevBtnActive, setPrevBtnActive] = useState(false)
+  const [nextBtnActive, setNextBtnActive] = useState(false)
+
    return(
       <>
       <Container>
@@ -38,15 +43,17 @@ function Clients() {
 
 
               <tr>
-                <td className="pg-column" colSpan="6">
-                  <button
-                    className="pg-column__btn pg-column__btn--actv"
-                    aria-label="prev"
-                  ></button>
-                  <button
-                    className="pg-column__btn pg-column__btn--left"
-                    aria-label="next"
-                  ></button>
+                <td colSpan="4">
+                  <div className="prev-next">
+                    <button onClick={() => {
+                      setNextBtnActive(false)
+                      setPrevBtnActive(true)
+                    }} className={prevBtnActive ?  "prev-next-btn prev-btn-active " : "prev-next-btn"} aria-label="prev"></button>
+                    <button onClick={() => {
+                      setNextBtnActive(true)
+                      setPrevBtnActive(false)
+                    }} className={nextBtnActive ? "prev-next-btn next-btn next-btn-active" : "prev-next-btn next-btn"} aria-label="next"></button>
+                  </div>
                 </td>
               </tr>
             </tbody>

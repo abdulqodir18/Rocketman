@@ -13,3 +13,42 @@
     color: #2A8CFF;
     text-decoration: underline;
 }
+
+.prev-next {
+    padding: 0 45px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.prev-next-btn { 
+    display: inline-block;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-image: url("../../assets/img/Arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.next-btn {
+    transform: rotate(180deg);
+}
+
+.prev-btn-active {
+    background-color: #2E3444;
+    background-image: url("../../assets/img/ArrowWhite.svg");
+}
+
+.next-btn-active {
+    background-color: #2E3444;
+    background-image: url("../../assets/img/ArrowWhite.svg");
+    transform: rotate(180deg);
+}
+
+.prev-next-btn:focus {
+    outline: 0;
+}

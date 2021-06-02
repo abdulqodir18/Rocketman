@@ -1,12 +1,16 @@
 import './ClientsInfo.scss';
+
+import OrdersTable from "./../OrdersTable/OrdersTable"
 import Container from '../Container/Container';
+
 import { Link } from 'react-router-dom';
 
-//Svg icons:
 import ArrowLeft from '../Lib/Svgs/ArrowLeft';
 import Call from '../Lib/Svgs/Call';
 
+
 function ClientsInfo() {
+
 	return (
 		<section className='clients-info'>
 			<Container>
@@ -40,6 +44,8 @@ function ClientsInfo() {
 						<Call className='clients-info__call-icon' /> +998 97 565 71 73
 					</a>
 				</div>
+
+				<OrdersTable />
 			</Container>
 		</section>
 	);
