@@ -14,7 +14,7 @@ function AddDriverModal({modal, setModal}) {
                 <h2 className="modal-drivers-title">Tahrirlash</h2>
                 <button onClick={() => setModal(false)} className="close-drivers-btn"><Close /></button>
                 
-                <form>
+                <form method="POST" action=''>
                 <div className="order-drivers-list">
                     <input className="order-drivers-radio" type="radio" id="johndoe" name="order-driver" value="johndoe" required/>
                     <label className="order-drivers-item" for="johndoe">
