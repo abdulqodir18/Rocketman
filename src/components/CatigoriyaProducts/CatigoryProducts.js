@@ -1,4 +1,4 @@
-import "./Catigoriya.scss";
+import "./CatigoryProduct.scss";
 import Table from "../Table/Table";
 import Container from "../Container/Container";
 import { NavLink } from "react-router-dom";
@@ -8,7 +8,7 @@ import AddModal from "./Modals/AddModal";
 import EditModal from "./Modals/ModalEdit";
 import DelateModal from "./Modals/Delate";
 
-function Catigoriya() {
+function CatigoryProduct() {
 
   const { addModal, setAddModal, editModal, setEditModal, delateModal, setDelateModal} = useContext(modalCtx)
 
@@ -24,11 +24,27 @@ function Catigoriya() {
             </li>
             <li className="table-top__item">
               <NavLink
-                className="table-top__item"
-                activeClassName="table-top__item-acv"
+                className="table-top__link"
                 to="/"
               >
-                kategoriya
+                kategoriya/
+              </NavLink>
+            </li>
+            <li className="table-top__item">
+              <NavLink
+                className="table-top__link"
+                to="/"
+              >
+                 fast food /
+              </NavLink>
+            </li>
+            <li className="table-top__item">
+              <NavLink
+                className="table-top__link"
+                activeClassName="table-top__item-acv"
+                to="/product"
+              >
+                 Evos
               </NavLink>
             </li>
           </ul>
@@ -38,8 +54,9 @@ function Catigoriya() {
           <Table>
             <thead>
               <tr>
-                <th colSpan="1">kategoriya</th>
-                <th colSpan="1">DO’konlar</th>
+                <th colSpan="1">id</th>
+                <th colSpan="1">tovar</th>
+                <th colSpan="1">tovar soni</th>
                 <th colSpan="1">holat</th>
                 <th colSpan="1">tahrirlash</th>
                 <th colSpan="1">o’chirish</th>
@@ -47,10 +64,11 @@ function Catigoriya() {
             </thead>
             <tbody>
               <tr>
-                <td colSpan="1">
-                  <NavLink className="table-wraper__navLink" to="products/item">Fast food</NavLink>
-                </td>
                 <td colSpan="1">1</td>
+                <td colSpan="1">
+                  <NavLink className="table-wraper__navLink" to="/products/product">Lavash</NavLink>
+                </td>
+                <td colSpan="1">5</td>
                 <td colSpan="1">
                   <span className="state state--disabled">delated</span>
                 </td>
@@ -91,4 +109,4 @@ function Catigoriya() {
   );
 }
 
-export default Catigoriya;
+export default CatigoryProduct;

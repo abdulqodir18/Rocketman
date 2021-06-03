@@ -1,4 +1,3 @@
-import { useState } from "react"
 
 import "./AddDriver.scss"
 import Close from "../Lib/Svgs/Close"

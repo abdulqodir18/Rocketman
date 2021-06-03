@@ -23,8 +23,8 @@ function ClientsInfo() {
 						<h2 className='clients-info__fullname'>Dimitri Mirko</h2>
 					</div>
 
-					<select className='clients-info__select' name='' id=''>
-						<option value='all' selected>
+					<select className='clients-info__select' name='' id='' defaultValue='all'>
+						<option value='all' >
 							Barchasi
 						</option>
 						<option value='ordered'>Buyurtma</option>

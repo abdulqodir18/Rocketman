@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { modalCtx } from "../../context/Cotigory";
-import Close from "../Lib/Svgs/Close";
-import "./AddModal.scss"
+import { modalCtx } from "../../../context/Cotigory"
+import Close from "../../Lib/Svgs/Close";
+import "./Modals.scss"
 
 function AddModal() {
 

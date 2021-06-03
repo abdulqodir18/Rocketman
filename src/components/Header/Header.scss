@@ -59,6 +59,7 @@
    border: none;
    background: none;
    cursor: pointer;
+   white-space: nowrap;
 }
 
 .profile__img {
@@ -78,6 +79,7 @@
    font-weight: 500;
    font-size: 12px;
    line-height: 15px;
+   text-transform: capitalize;
    color: $main-text-color_active;
 }
 

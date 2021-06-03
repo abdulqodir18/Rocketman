@@ -14,7 +14,7 @@ function Home() {
    return (
       <div className="home">
          <Header />
-         <div>
+         <div className="component-wrp">
             <Switch>
                <Private path="/" exact component={Orders} />
                <Private path="/clients" component={Clients} />
