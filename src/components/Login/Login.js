@@ -19,22 +19,24 @@ const loginMut = gql`
 `;
 
 function Login() {
+
   const [loginAdmin] = useMutation(loginMut);
-const [ setAuth] = useAuth(true)
+  const [setAuth] = useAuth(true);
+
+  const userName = useRef()
+  const password = useRef()
+
   function handleLogin(evt) {
     evt.preventDefault();
 
-    loginAdmin({ variables: { fullname: "john", password: "john" } }).then(({ data }) => {
-      setAuth(data.loginAdmin);
-    });
+    loginAdmin({ variables: { fullname: userName.current.value, password: password.current.value } }).then(
+      ({ data }) => {
+        setAuth(data.loginAdmin);
+      }
+    ).catch(err => console.error(err, 'error'));
   }
 
-  
 
-  //   const login = () => setAuth({ token: "token" });
-
-  const userName = useRef();
-  const password = useRef();
   return (
     <div className="login">
       <div className="login__svg">
