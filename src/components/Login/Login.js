@@ -1,42 +1,83 @@
-import './Login.scss'
-import LoginLogo from '../Lib/Svgs/LoginLogo'
-import UserItem from '../Lib/Svgs/UserItem'
-import useAuth from '../../hooks/useAuth'
-import Password from '../Lib/Svgs/Password'
-import { useRef } from 'react'
+import { useRef } from "react";
+import { gql, useMutation } from "@apollo/client";
+import "./Login.scss";
+import LoginLogo from "../Lib/Svgs/LoginLogo";
+import UserItem from "../Lib/Svgs/UserItem";
+import useAuth from "../../hooks/useAuth";
+import Password from "../Lib/Svgs/Password";
+
+const loginMut = gql`
+  mutation LoginAdmin($fullname: String!, $password: String!) {
+    loginAdmin(fullName: $fullname, password: $password) {
+      admin {
+        admin_id
+        admin_login
+      }
+      token
+    }
+  }
+`;
 
 function Login() {
-   const [setAuth] = useAuth(true)
+  const [loginAdmin] = useMutation(loginMut);
+const [ setAuth] = useAuth(true)
+  function handleLogin(evt) {
+    evt.preventDefault();
 
-   const login = () => setAuth({token: 'token'})
+    loginAdmin({ variables: { fullname: "john", password: "john" } }).then(({ data }) => {
+      setAuth(data.loginAdmin);
+    });
+  }
 
-   const userName = useRef()
-   const password = useRef()
-   return(
-      <div className="login">
-         <div className="login__svg">
-            <LoginLogo />
-         </div>
+  
 
-         <div className="login__inner">
-            <h1 className="login__title">Kirish</h1>
-            <form className="login__form" action="" method="post">
-               <label className="login__label">
-                  <UserItem/>
-                  <input ref={userName} className="login__input" type="text" required placeholder="Login" />
-               </label>
-               <label className="login__label">
-                  <Password/>
-                  <input ref={password} className="login__input" type="password" required placeholder="Parol" />
-               </label>
+  //   const login = () => setAuth({ token: "token" });
 
-               <button className="login__btn" type="submit" onClick={()=> { if(userName.current.value && password.current.value) login()}}>
-                  Kirish
-               </button>
-            </form>
-         </div>
+  const userName = useRef();
+  const password = useRef();
+  return (
+    <div className="login">
+      <div className="login__svg">
+        <LoginLogo />
       </div>
-   )
+
+      <div className="login__inner">
+        <h1 className="login__title">Kirish</h1>
+        <form
+          className="login__form"
+          method="post"
+          onSubmit={handleLogin}
+          autoComplete="off"
+        >
+          <label className="login__label">
+            <UserItem />
+            <input
+              ref={userName}
+              className="login__input"
+              type="text"
+              required
+              placeholder="Login"
+            />
+          </label>
+          <label className="login__label">
+            <Password />
+            <input
+              ref={password}
+              className="login__input"
+              type="password"
+              required
+              placeholder="Parol"
+              autoComplete="off"
+            />
+          </label>
+
+          <button className="login__btn" onClick={handleLogin}>
+            Kirish
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

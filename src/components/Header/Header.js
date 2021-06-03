@@ -7,6 +7,7 @@ import VectorIcon from '../Lib/Svgs/VectorIcon'
 import LogOutIcon from '../Lib/Svgs/LogOutIcon'
 
 function Header() {
+
    const logOut = useRef()
    const openHendler = () => {
       logOut.current.classList.toggle('display-flex')
@@ -25,18 +26,18 @@ function Header() {
                <SearchIcon />
             </button>
          </div>
-         <button className="profile" onClick={openHendler}>
+         <div className="profile" onClick={openHendler}>
             <span className="profile__img">
                <UserIcon />
             </span>
-            <span className="profile__name">Shuhratbek</span>
+            <span className="profile__name">{auth && auth.admin.admin_login}</span>
             <VectorIcon />
 
             <button ref={logOut} className="logout" onClick={handleLogOut}>
                <LogOutIcon />
                <span>Log Out</span>
             </button>
-         </button>
+         </div>
       </header>
    )
 }
