@@ -7,7 +7,7 @@ import AddModal from "./Modals/AddModal";
 import EditModal from "./Modals/EditModal";
 import DelateModal from "./Modals/DelateModal";
 
-function CatigoryItem() {
+function CatigoryLastPage() {
 
   const { addModal, setAddModal, editModal, setEditModal, delateModal, setDelateModal} = useContext(modalCtx)
 
@@ -32,10 +32,18 @@ function CatigoryItem() {
             <li className="table-top__item">
               <NavLink
                 className="table-top__link"
+                to="/products"
+              >
+                fast food/
+              </NavLink>
+            </li>
+            <li className="table-top__item">
+              <NavLink
+                className="table-top__item"
                 activeClassName="table-top__item-acv"
                 to="/products"
               >
-                fast food
+                Lavash
               </NavLink>
             </li>
           </ul>
@@ -44,12 +52,12 @@ function CatigoryItem() {
         <div className="table-wraper">
           <Table>
             <thead>
+
               <tr>
                 <th colSpan="1">id</th>
-                <th colSpan="1">DO’konlar</th>
-                <th colSpan="1">tovar soni</th>
-                <th colSpan="1">telefon raqam</th>
-                <th colSpan="1">manzil</th>
+                <th colSpan="1">tovar</th>
+                <th colSpan="1">ma’lumot</th>
+                <th colSpan="1">narxi</th>
                 <th colSpan="1">holat</th>
                 <th colSpan="1">tahrirlash</th>
                 <th colSpan="1">o’chirish</th>
@@ -58,16 +66,11 @@ function CatigoryItem() {
             <tbody>
               <tr>
                 <td colSpan="1">1</td>
+                <td colSpan="1">Lavash mini</td>
+                <td colSpan="1"><span className="td__span">In tellus leo eleifend ut mollis loremaaaa aaaaaaaaaaaaaaaa</span></td>
+                <td>20 000 so’m</td>
                 <td colSpan="1">
-                  <NavLink className="table-wraper__navLink" to="/products/market">Evos</NavLink>
-                </td>
-                <td colSpan="1">5</td>
-                <td>
-                  <a className="table-wraper__navLink" href="tel:998901234567">+998901234567</a>
-                </td>
-                <td colSpan="1">Qo’shtepa</td>
-                <td colSpan="1">
-                  <span className="state state--disabled">delated</span>
+                  <span className="state state--enabled">enabled</span>
                 </td>
                 <td colSpan="1">
                   <button className="edit" aria-label="edit" onClick={() => setEditModal(true)}></button>
@@ -76,6 +79,7 @@ function CatigoryItem() {
                   <button className="delate" aria-label="delate" onClick={() => setDelateModal(true)}></button>
                 </td>
               </tr>
+
               <tr>
                 <td className="pg-column" colSpan="8">
                   <button
@@ -100,10 +104,10 @@ function CatigoryItem() {
         editModal && <EditModal/>
       }
       {
-        delateModal && <DelateModal/>
+        delateModal && <DelateModal value={setDelateModal}/>
       }
     </>
   )
 }
 
-export default CatigoryItem
+export default CatigoryLastPage
