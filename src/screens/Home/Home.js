@@ -8,6 +8,7 @@ import Products from '../Products/Products'
 import Settings from '../../components/Settings/Settings'
 
 import ClientsInfo from '../../components/ClientsInfo/ClientsInfo'
+import ClientDetails from '../../components/ClientDetails/ClientDetails'
 
 function Home() {
    return (
@@ -20,6 +21,7 @@ function Home() {
                <Private path="/products" component={Products} />
                <Private path="/settings" component={Settings} />
                <Private path="/info" component={ClientsInfo} />
+               <Private path="/detail" component={ClientDetails} />
             </Switch>
          </div>
       </div>

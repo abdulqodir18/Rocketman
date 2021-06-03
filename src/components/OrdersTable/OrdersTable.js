@@ -73,7 +73,7 @@ function OrdersTable() {
                      }} className={nextBtnActive ? "prev-next-btn next-btn next-btn-active" : "prev-next-btn    next-btn"} aria-label="next"></button>
                      </div>
                   </td>
-              </tr>
+                  </tr>
                </tbody>
             </Table>
 
