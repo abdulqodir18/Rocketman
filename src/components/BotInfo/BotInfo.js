@@ -24,7 +24,7 @@ function BotInfo() {
                </div>
                <div className="bot-info__input-wrapper">
                   <label className="bot-info__label">Telefon raqam</label>
-                  <input className="bot-info__input" type="text" placeholder="+998 _ _  _ _ _  _ _  _ _" value="+998" required />
+                  <input className="bot-info__input" type="text" placeholder="+998 _ _  _ _ _  _ _  _ _" required />
                </div>
                <button className="bot-info__btn">Yangilash</button>
             </form>
