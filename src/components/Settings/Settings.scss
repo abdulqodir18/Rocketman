@@ -1,0 +1,34 @@
+@import '../../assets/Scss/variables.scss';
+
+.settings {
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+}
+
+.nested-links {
+   margin-left: auto;
+   margin-right: auto;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   box-sizing: border-box;
+   border-radius: 150px;
+
+   .nested-link {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+   }
+
+   .nested-link-active {
+      background-color: $main-color;
+      border-radius: 150px;
+      color: #fff;
+   }
+}
+
