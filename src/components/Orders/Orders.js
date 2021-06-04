@@ -9,8 +9,8 @@ function Orders() {
       <>
          <Container>
 
-            <select className="clients-status-select" id="" name="">
-               <option value='all' selected>Barchasi</option>
+            <select className="clients-status-select" id="" name="" defaultValue='all'>
+               <option value='all'  >Barchasi</option>
 					<option value='ordered'>Buyurtma</option>
 					<option value='accepted'>Tasdiqlandi</option>
 					<option value='preparing'>Tayyorlanmoqda</option>
