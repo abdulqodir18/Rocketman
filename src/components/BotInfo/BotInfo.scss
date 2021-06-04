@@ -1,0 +1,78 @@
+@import '../../assets/Scss/variables.scss';
+
+.bot-info__heading {
+   padding: 0;
+   margin: 0;
+   margin-bottom: 20px;
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 24px;
+}
+
+.bot-info__form {
+   max-width: 820px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.bot-info__input-wrapper {
+   max-width: 250px;
+   width: 100%;
+   margin-bottom: 25px;
+   display: flex;
+   flex-direction: column;
+}
+
+.bot-info__label {
+   padding-bottom: 10px;
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 17px;
+}
+
+.bot-info__input {
+   padding: 13px 15px;
+   outline: none;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   box-sizing: border-box;
+   border-radius: 5px;
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 15px;
+   color: #000000;
+   opacity: 0.6;
+
+   &:focus {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      opacity: 0.9;
+   }
+}
+
+.bot-info__btn {
+   margin-top: 25px;
+   max-width: 250px;
+   width: 100%;
+   max-height: 45px;
+   background-color: $main-color;
+   cursor: pointer;
+   border: none;
+   border-radius: 5px;
+   font-family: Montserrat;
+   font-style: normal;
+   font-weight: 600;
+   font-size: 14px;
+   line-height: 17px;
+   color: $main-text-color_active;
+   transition: 0.2s ease;
+
+   &:hover {
+      background-color: $main-color-hovered;
+   }
+}
